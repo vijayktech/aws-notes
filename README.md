@@ -15,8 +15,6 @@ POM.xml
 		
 		
 	• Add shade plugin for reduce the generated package size.
-AKIA6DM4WP4CCP7KOBOO
-vdf+SPh81WsgDCaS/O5RlAx+W3gnCWpLGvkQQ8bu
 
 
 		<build>
