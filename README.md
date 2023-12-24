@@ -1,6 +1,7 @@
 Configuration 
 
 POM.xml 
+
 	• Add below dependency 
 		a. spring-cloud-function-adapter-aws  
 			- The AWS adapter takes a Spring Cloud Function app and converts it to a form that can run in AWS Lambda.
@@ -14,6 +15,9 @@ POM.xml
 		
 		
 	• Add shade plugin for reduce the generated package size.
+AKIA6DM4WP4CCP7KOBOO
+vdf+SPh81WsgDCaS/O5RlAx+W3gnCWpLGvkQQ8bu
+
 
 		<build>
     <plugins>
