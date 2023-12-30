@@ -1,0 +1,157 @@
+React Props
+Props are passed to components via HTML attributes.
+React Props are like function arguments in JavaScript and attributes in HTML.
+To send props into a component, use the same syntax as HTML attributes:
+
+Pass Data
+Props are also can pass data from one component to another, as parameters.
+
+React Events
+Just like HTML DOM events, React can perform actions based on user events.
+React has the same events as HTML: click, change, mouseover etc.
+
+React events are written in camelCase syntax:
+
+Event Handlers
+React event handlers are written inside curly braces:
+onClick={shoot}  instead of onClick="shoot()".
+
+Passing Arguments
+To pass an argument to an event handler, use an arrow function.
+
+function Football() {
+  const shoot = (a) => {
+    alert(a);
+  }
+
+  return (
+    <button onClick={() => shoot("Goal!")}>Take the shot!</button>
+  );
+}
+
+React Event Object
+Event handlers have access to the React event that triggered the function.
+
+React Conditional Rendering
+if Statement
+We can use the if JavaScript operator to decide which component to render.
+if (isGoal) {
+    return <MadeGoal/>; // call MadeGoal component
+  }
+  return <MissedGoal/>; // call Missed component
+
+Logical && Operator
+Another way to conditionally render a React component is by using the && operator.
+
+	{cars.length > 0 &&
+        <h2>
+          You have {cars.length} cars in your garage.
+        </h2>
+
+Ternary Operator
+condition ? true : false
+	<>
+      		{ isGoal ? <MadeGoal/> : <MissedGoal/> }
+    	</>
+
+
+React Forms
+Just like in HTML, React uses forms to allow users to interact with the web page.
+
+This will work as normal, the form will submit and the page will refresh.
+
+But this is generally not what we want to happen in React.
+
+We want to prevent this default behavior and let React control the form.
+
+Handling Forms
+Handling forms is about how you handle the data when it changes value or gets submitted.
+In HTML, form data is usually handled by the DOM.
+
+In React, form data is usually handled by the components.
+We can use the useState Hook to keep track of each inputs value and provide a "single source of truth" for the entire application.
+
+To access the fields in the event handler use the event.target.name and event.target.value syntax
+To update the state, use square brackets [bracket notation] around the property name.
+
+Note: We use the same event handler function for both input fields, we could write one event handler for each, but this gives us much cleaner code and is the preferred way in React.
+
+React Router
+Create React App doesn't include page routing.
+React Router is the most popular solution.
+
+Add React Router
+> npm i -D react-router-dom
+
+<BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+We wrap our content first with <BrowserRouter>.
+Setting the path to * will act as a catch-all for any undefined URLs. This is great for a 404 error page.
+
+The Layout component has <Outlet> and <Link> elements.
+
+The <Outlet> renders the current route selected.
+
+<Link> is used to set the URL and keep track of browsing history.
+
+Anytime we link to an internal path, we will use <Link> instead of <a href="">.
+
+React Memo
+---------------
+Using memo will cause React to skip rendering a component if its props have not changed.
+This can improve performance.
+
+Styling React Using CSS
+-----------------------------
+There are many ways to style React with CSS, this tutorial will take a closer look at three common ways:
+
+Inline styling
+CSS stylesheets
+CSS Modules
+
+Inline 
+<h1 style={{color: "red"}}>Hello Style!</h1>
+
+camelCased Property Names
+Use backgroundColor instead of background-color:
+
+CSS Modules
+Another way of adding styles to your application is to use CSS Modules.
+
+CSS Modules are convenient for components that are placed in separate files.
+
+Note:
+The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+
+Create the CSS module with the .module.css extension, 
+example: my-style.module.css.
+
+import styles from './my-style.module.css'; 
+
+const Car = () => {
+  return <h1 className={styles.bigblue}>Hello Car!</h1>;
+}
+
+Styling React Using Sass
+---------------------------
+Sass is a CSS pre-processor.
+Sass files are executed on the server and sends CSS to the browser.
+
+Install Sass
+> npm i sass
+
+Create a Sass file
+Create a Sass file the same way as you create CSS files, but Sass files have the file extension .scss
+
+Import the Sass file the same way as you imported a CSS file:
+
+
